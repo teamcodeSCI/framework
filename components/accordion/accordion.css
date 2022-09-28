@@ -1,0 +1,135 @@
+.btn {
+  --cui-btn-padding-x: 0.75rem;
+  --cui-btn-padding-y: 0.375rem;
+  --cui-btn-font-family: ;
+  --cui-btn-font-size: 1rem;
+  --cui-btn-font-weight: 400;
+  --cui-btn-line-height: 1.5;
+  --cui-btn-color: rgba(44, 56, 74, 0.95);
+  --cui-btn-bg: transparent;
+  --cui-btn-border-width: 1px;
+  --cui-btn-border-color: transparent;
+  --cui-btn-border-radius: 0.375rem;
+  --cui-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 1px 1px rgba(0, 0, 21, 0.075);
+  --cui-btn-disabled-opacity: 0.65;
+  --cui-btn-focus-box-shadow: 0 0 0 0.25rem
+    rgba(var(--cui-btn-focus-shadow-rgb), 0.5);
+  display: inline-block;
+  padding: var(--cui-btn-padding-y) var(--cui-btn-padding-x);
+  font-family: var(--cui-btn-font-family);
+  font-size: var(--cui-btn-font-size);
+  font-weight: var(--cui-btn-font-weight);
+  line-height: var(--cui-btn-line-height);
+  color: var(--cui-btn-color);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: var(--cui-btn-border-width) solid var(--cui-btn-border-color);
+  border-radius: var(--cui-btn-border-radius);
+  background-color: var(--cui-btn-bg);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-primary {
+  --cui-btn-color: #000015;
+  --cui-btn-bg: #39f;
+  --cui-btn-border-color: #39f;
+  --cui-btn-hover-color: #000015;
+  --cui-btn-hover-bg: #52a8ff;
+  --cui-btn-hover-border-color: #47a3ff;
+  --cui-btn-focus-shadow-rgb: 43, 130, 220;
+  --cui-btn-active-color: #000015;
+  --cui-btn-active-bg: #5cadff;
+  --cui-btn-active-border-color: #47a3ff;
+  --cui-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 21, 0.125);
+  --cui-btn-disabled-color: #000015;
+  --cui-btn-disabled-bg: #39f;
+  --cui-btn-disabled-border-color: #39f;
+}
+.btn-secondary {
+  --cui-btn-color: rgba(44, 56, 74, 0.95);
+  --cui-btn-bg: #ebedef;
+  --cui-btn-border-color: #ebedef;
+  --cui-btn-hover-color: rgba(44, 56, 74, 0.95);
+  --cui-btn-hover-bg: #c8c9cb;
+  --cui-btn-hover-border-color: #bcbebf;
+  --cui-btn-focus-shadow-rgb: 209, 212, 216;
+  --cui-btn-active-color: rgba(44, 56, 74, 0.95);
+  --cui-btn-active-bg: #bcbebf;
+  --cui-btn-active-border-color: #b0b2b3;
+  --cui-btn-active-shadow: inset 0 3px 5pxrgba (0, 0, 21, 0.125);
+  --cui-btn-disabled-color: rgba(44, 56, 74, 0.95);
+  --cui-btn-disabled-bg: #ebedef;
+  --cui-btn-disabled-border-color: #ebedef;
+}
+.btn-outline-primary {
+  --cui-btn-color: #39f;
+  --cui-btn-border-color: #39f;
+  --cui-btn-hover-color: #000015;
+  --cui-btn-hover-bg: #5cadff;
+  --cui-btn-hover-border-color: #47a3ff;
+  --cui-btn-focus-shadow-rgb: 51, 153, 255;
+  --cui-btn-active-color: #000015;
+  --cui-btn-active-bg: #5cadff;
+  --cui-btn-active-border-color: #47a3ff;
+  --cui-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 21, 0.125);
+  --cui-btn-disabled-color: #39f;
+  --cui-btn-disabled-bg: transparent;
+  --cui-gradient: none;
+}
+.btn-outline-success {
+  --cui-btn-color: #51cc8a;
+  --cui-btn-border-color: #51cc8a;
+  --cui-btn-hover-color: #000015;
+  --cui-btn-hover-bg: #41a36e;
+  --cui-btn-hover-border-color: #3d9968;
+  --cui-btn-focus-shadow-rgb: 81, 204, 138;
+  --cui-btn-active-color: #000015;
+  --cui-btn-active-bg: #41a36e;
+  --cui-btn-active-border-color: #3d9968;
+  --cui-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 21, 0.125);
+  --cui-btn-disabled-color: #51cc8a;
+  --cui-btn-disabled-bg: transparent;
+  --cui-gradient: none;
+}
+.btn-outline-danger {
+  --cui-btn-color: #ef376e;
+  --cui-btn-border-color: #ef376e;
+  --cui-btn-hover-color: #000015;
+  --cui-btn-hover-bg: #f25f8b;
+  --cui-btn-hover-border-color: #f14b7d;
+  --cui-btn-focus-shadow-rgb: 239, 55, 110;
+  --cui-btn-active-color: #000015;
+  --cui-btn-active-bg: #f25f8b;
+  --cui-btn-active-border-color: #f14b7d;
+  --cui-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 21, 0.125);
+  --cui-btn-disabled-color: #ef376e;
+  --cui-btn-disabled-bg: transparent;
+  --cui-gradient: none;
+}
+
+.form-switch-lg .form-check-input {
+  width: 1.75em;
+  height: 1.25em;
+}
+.form-switch-xl .form-check-input {
+  width: 2em;
+  height: 1.5em;
+}
+
+.btn-check:checked + .btn {
+  color: var(--cui-btn-active-color);
+  background-color: var(--cui-btn-active-bg);
+  border-color: var(--cui-btn-active-border-color);
+}
+.Accordion{
+  padding: 40px 0;
+}
+strong{
+  font-size: 30px;
+}

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>DataTables example - Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <style type="text/css" class="init">
+
+    </style>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+
+
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+
+
+    </script>
+    <style>
+        .pagination,
+        .dataTables_filter {
+            float: right;
+        }
+
+        .dataTables_info {
+            display: none;
+        }
+
+        .form-select {
+            width: auto;
+            margin: 0 5px;
+        }
+
+        label {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .bg-success-gradient {
+            background-color: var(--cui-success, #49b87c);
+            background-image: linear-gradient(45deg, var(--cui-success-start, #85dbad) 0%, var(--cui-success-stop, #49b87c 100%));
+        }
+
+        .badge {
+            --cui-badge-padding-x: 0.65em;
+            --cui-badge-padding-y: 0.35em;
+            --cui-badge-font-size: 0.75em;
+            --cui-badge-font-weight: 700;
+            --cui-badge-color: rgba(255, 255, 255, 0.87);
+            --cui-badge-border-radius: 0.375rem;
+            display: inline-block;
+            padding: var(--cui-badge-padding-y) var(--cui-badge-padding-x);
+            font-size: var(--cui-badge-font-size);
+            font-weight: var(--cui-badge-font-weight);
+            line-height: 1;
+            color: var(--cui-badge-color);
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: var(--cui-badge-border-radius, 0);
+        }
+
+        .bg-danger-gradient {
+            background-color: var(--cui-danger, #d73263);
+            background-image: linear-gradient(45deg, var(--cui-danger-start, #f4739a) 0%, var(--cui-danger-stop, #d73263 100%));
+        }
+
+        .bg-warning-gradient {
+            background-color: var(--cui-warning, #e6b800);
+            background-image: linear-gradient(45deg, var(--cui-warning-start, #ffdb4d) 0%, var(--cui-warning-stop, #e6b800 100%));
+        }
+
+        .bg-dark-gradient {
+            background-color: var(--cui-dark, #212333);
+            background-image: linear-gradient(45deg, var(--cui-dark-start, #3c4b64) 0%, var(--cui-dark-stop, #212333 100%));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="fs-2 fw-semibold">DataTable</div>
+        <div class="tab-pane p-3 active preview">
+            <table id="example" class="table table-striped border datatable dataTable no-footer" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Date rigistered</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Walerian Khwaja</td>
+                        <td>2012/01/01</td>
+                        <td>Member</td>
+                        <td><span class="badge bg-success-gradient">Active/span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tullio Luka</td>
+                        <td>2012/02/01</td>
+                        <td>Tokyo</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Junior Technical Author</td>
+                        <td>2012/02/01</td>
+                        <td>66</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Senior Javascript Developer</td>
+                        <td>2012/02/01</td>
+                        <td>22</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Accountant</td>
+                        <td>2012/02/01</td>
+                        <td>33</td>
+                        <td><span class="badge bg-success-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Integration Specialist</td>
+                        <td>2012/02/01</td>
+                        <td>61</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sales Assistant</td>
+                        <td>2012/02/01</td>
+                        <td>59</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Integration Specialist</td>
+                        <td>2012/02/01</td>
+                        <td>55</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Javascript Developer</td>
+                        <td>2012/02/01</td>
+                        <td>39</td>
+                        <td><span class="badge bg-success-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Software Engineer</td>
+                        <td>2012/02/01</td>
+                        <td>23</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Office Manager</td>
+                        <td>2012/02/01</td>
+                        <td>30</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Support Lead</td>
+                        <td>2012/02/01</td>
+                        <td>22</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Regional Director</td>
+                        <td>2012/02/01</td>
+                        <td>36</td>
+                        <td><span class="badge bg-success-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Senior Marketing Designer</td>
+                        <td>2012/02/01</td>
+                        <td>43</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Regional Director</td>
+                        <td>2012/02/01</td>
+                        <td>19</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Marketing Designer</td>
+                        <td>2012/02/01</td>
+                        <td>66</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chief Financial Officer (CFO)</td>
+                        <td>2012/02/01</td>
+                        <td>64</td>
+                        <td><span class="badge bg-success-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Systems Administrator</td>
+                        <td>2012/02/01</td>
+                        <td>59</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Software Engineer</td>
+                        <td>2012/02/01</td>
+                        <td>41</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Personnel Lead</td>
+                        <td>2012/02/01</td>
+                        <td>35</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Development Lead</td>
+                        <td>2012/02/01</td>
+                        <td>30</td>
+                        <td><span class="badge bg-danger-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Yuri Berry</td>
+                        <td>2012/02/01</td>
+                        <td>40</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Caesar Vance</td>
+                        <td>2012/02/01</td>
+                        <td>21</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Doris Wilder</td>
+                        <td>2012/02/01</td>
+                        <td>23</td>
+                        <td><span class="badge bg-warning-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Angelica Ramos</td>
+                        <td>2012/02/01</td>
+                        <td>47</td>
+                        <td><span class="badge bg-success-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gavin Joyce</td>
+                        <td>2012/02/01</td>
+                        <td>Edinburgh</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Chang</td>
+                        <td>2012/02/01</td>
+                        <td>28</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Brenden Wagner</td>
+                        <td>2012/02/01</td>
+                        <td>28</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fiona Green</td>
+                        <td>2012/02/01</td>
+                        <td>48</td>
+                        <td><span class="badge bg-success-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Shou Itou</td>
+                        <td>2012/02/01</td>
+                        <td>20</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Michelle House</td>
+                        <td>2012/02/01</td>
+                        <td>37</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Suki Burks</td>
+                        <td>2012/02/01</td>
+                        <td>London</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Technical Author</td>
+                        <td>2012/02/01</td>
+                        <td>27</td>
+                        <td><span class="badge bg-success-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gavin Cortez</td>
+                        <td>2012/02/01</td>
+                        <td>22</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Martena Mccray</td>
+                        <td>2012/02/01</td>
+                        <td>46</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Unity Butler</td>
+                        <td>2012/02/01</td>
+                        <td>47</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Howard Hatfield</td>
+                        <td>2012/02/01</td>
+                        <td>51</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hope Fuentes</td>
+                        <td>2012/02/01</td>
+                        <td>41</td>
+                        <td><span class="badge bg-success-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Vivian Harrell</td>
+                        <td>2012/02/01</td>
+                        <td>62</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Office Manager</td>
+                        <td>2012/02/01</td>
+                        <td>37</td>
+                        <td><span class="badge bg-danger-gradient">Banned</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Director</td>
+                        <td>2012/02/01</td>
+                        <td>65</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Olivia Liang</td>
+                        <td>2012/02/01</td>
+                        <td>Singapore</td>
+                        <td><span class="badge bg-warning-gradient">Warning</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bruno Nash</td>
+                        <td>2012/02/01</td>
+                        <td>38</td>
+                        <td><span class="badge bg-danger-gradient">Active</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sakura Yamamoto</td>
+                        <td>2012/02/01</td>
+                        <td>37</td>
+                        <td><span class="badge bg-dark-gradient">Inactive</span></td>
+                        <td>
+                            <a class="btn btn-success me-2" href="#"><i class="bi bi-search"></i></a>
+                            <a class="btn btn-info me-2" href="#"><i class="bi bi-file-earmark-bar-graph"></i></a>
+                            <a class="btn btn-danger" href="#"><i class="bi bi-trash3"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
